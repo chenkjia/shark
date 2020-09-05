@@ -19,9 +19,11 @@ class OiController extends Controller {
     const { ctx, service, query } = this;
     ctx.logger.info('-----------------')
     ctx.logger.info('POST')
-    ctx.logger.info('ctx')
-    ctx.logger.info(ctx.req)
-    ctx.body = ctx.req; 
+    ctx.logger.info('ctx.request.body')
+    ctx.logger.info(ctx.request.body)
+    ctx.logger.info('query')
+    ctx.logger.info(query)
+    ctx.body = ctx.request.body;
   }
 }
 
