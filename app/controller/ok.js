@@ -15,6 +15,13 @@ class OiController extends Controller {
     const { ctx, service } = this;
     ctx.body = await service.spot.accounts();
   }
+  async spotTest() {
+    const { ctx, service, query } = this;
+    console.log('ctx.request.body')
+    console.log(ctx.request.body)
+    console.log('query')
+    console.log(query)
+  }
 }
 
 module.exports = OiController;
