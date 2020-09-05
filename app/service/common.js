@@ -1,7 +1,7 @@
 'use strict';
 const Service = require('egg').Service;
 const moment = require('moment');
-const {SECURITYKEY,APIKEY,PASSPHRASE} = require('./key.js');
+const {HOST,SECURITYKEY,APIKEY,PASSPHRASE} = require('./key.js');
 const hmacSHA256 = require('crypto-js/hmac-sha256');
 const Base64 = require('crypto-js/enc-base64');
 class CommonService extends Service {
@@ -16,7 +16,7 @@ class CommonService extends Service {
     console.log(signText)
     console.log(data)
     const sign = Base64.stringify(hmacSHA256( signText ,SECURITYKEY))
-    const callback = await this.ctx.curl(`http://okex.me${url}`, {
+    const callback = await this.ctx.curl(`${HOST}${url}`, {
       method,
       followRedirect: true,
       dataType: 'json',
