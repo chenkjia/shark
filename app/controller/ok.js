@@ -20,7 +20,8 @@ class OiController extends Controller {
     ctx.logger.info('-----------------')
     ctx.logger.info('POST')
     ctx.logger.info('ctx')
-    ctx.logger.info(ctx)
+    ctx.logger.info(ctx.req)
+    ctx.body = ctx.req; 
   }
 }
 
