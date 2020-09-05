@@ -19,19 +19,8 @@ class OiController extends Controller {
     const { ctx, service, query } = this;
     ctx.logger.info('-----------------')
     ctx.logger.info('POST')
-    ctx.logger.info('ctx.request.body')
-    ctx.logger.info(ctx.request.body)
-    ctx.logger.info('query')
-    ctx.logger.info(query)
-  }
-  async spotTestg() {
-    const { ctx, service, query } = this;
-    ctx.logger.info('-----------------')
-    ctx.logger.info('GET')
-    ctx.logger.info('ctx.request.body')
-    ctx.logger.info(ctx.request.body)
-    ctx.logger.info('query')
-    ctx.logger.info(query)
+    ctx.logger.info('ctx')
+    ctx.logger.info(ctx)
   }
 }
 
