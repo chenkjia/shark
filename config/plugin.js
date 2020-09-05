@@ -6,4 +6,7 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  security: {
+    enable: false,
+  },
 };

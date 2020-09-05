@@ -11,6 +11,10 @@ class HomeController extends Controller {
     const { ctx, service } = this;
     ctx.body = await service.ok.trade();
   }
+  async time() {
+    const { ctx, service } = this;
+    ctx.body = await service.ok.trade();
+  }
 }
 
 module.exports = HomeController;
