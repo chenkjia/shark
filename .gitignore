@@ -13,4 +13,3 @@ run/
 typings/
 .nyc_output/
 app/service/key.js
-config/config.default.js
