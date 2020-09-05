@@ -9,5 +9,7 @@ module.exports = app => {
   router.get('/time', controller.home.time);
   router.post('/ok/spot/trade', controller.ok.spotTrade);
   router.post('/ok/spot/accounts', controller.ok.spotAccounts);
+  router.post('/ok/spot/test', controller.ok.spotTest);
+  router.get('/ok/spot/test', controller.ok.spotTest);
   
 };
