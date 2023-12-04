@@ -1,6 +1,6 @@
 import './libs/console.js';
-import { ROUTER, FACTORY, ABI, INTERFACE } from './constants/index.js';
-console.log({ ROUTER, FACTORY, ABI, INTERFACE })
+import { ENV } from './constants/index.js';
+console.log({ENV })
 
 // const main = () => {
 //   console.log('启动');
