@@ -1,17 +1,18 @@
 {
   "name": "shark",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "type": "module",
   "repository": "git@github.com:chenkjia/shark.git",
   "author": "chenkjia <chenkjia@live.com>",
   "license": "MIT",
   "scripts": {
-    "start": "pm2 start ./src/index.js",
-    "stop": "pm2 stop ./src/index.js",
-    "dev": "node ./src/index.js"
+    "start": "pm2 start ./src/main.js",
+    "stop": "pm2 stop ./src/main.js",
+    "dev": "node ./src/main.js"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ethers": "5"
   }
 }
