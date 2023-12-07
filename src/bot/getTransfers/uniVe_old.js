@@ -10,7 +10,7 @@ const dataFormatter = {
     const mul = params[1].map((p,index) => {
       const command = "0x" + params[0][index * 2 + 2] + params[0][index * 2 + 3]
       const info = ABI_DEFINITION[command] && ethers.utils.defaultAbiCoder.decode(ABI_DEFINITION[command], p)
-      const result = COMMONDS[command] && COMMONDS[command](info)
+      const result = commandS[command] && commandS[command](info)
       return result
     });
     return mul.filter(i => i).reduce((r,i) => ([
@@ -23,8 +23,8 @@ const dataFormatter = {
 const dataFormat = (txData) => {
   const data = decoder.decodeData(txData)
   // return dataFormatter[data?.name]?.(data.params)
-  if (data && dataFormatter[data.method]) {
-    return dataFormatter[data.method](data.inputs);
+  if (data && dataFormatter[data.name]) {
+    return dataFormatter[data.name](data.args);
   } else {
     return null;
   }

@@ -10,13 +10,18 @@
     "start": "pm2 start ./src/main.js",
     "stop": "pm2 stop ./src/main.js",
     "dev": "node ./src/main.js",
-    "test": "node ./src/test.js"
+    "test": "node ./src/test.js",
+    "formatUniVe": "node ./src/formatData/formatUniVe.js",
+    "cleanData": "node ./src/formatData/cleanData.js",
+    "getTx": "node ./src/formatData/getTx.js",
+    "getTxTransers": "node ./src/formatData/getTxTransers.js"
   },
   "dependencies": {
     "alchemy-sdk": "^3.1.0",
     "dotenv": "^16.3.1",
     "ethereum-input-data-decoder": "^0.4.2",
     "ethers": "5",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mongodb": "^6.3.0"
   }
 }
