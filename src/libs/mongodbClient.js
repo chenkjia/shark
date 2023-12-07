@@ -1,7 +1,7 @@
 
 import { MongoClient } from 'mongodb';
-
-const url = 'mongodb://localhost:27017';
+import { ENV } from '../constants/index.js';
+const url = ENV.MONGODB;
 const mongodbClient = new MongoClient(url);
 
 export const insert = async (dbName, collectionName, data) => {
