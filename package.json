@@ -14,7 +14,7 @@
     "formatUniVe": "node ./src/formatData/formatUniVe.js",
     "cleanData": "node ./src/formatData/cleanData.js",
     "getTx": "node ./src/formatData/getTx.js",
-    "getTxTransers": "node ./src/formatData/getTxTransers.js"
+    "getTxLogs": "node ./src/formatData/getTxLogs.js"
   },
   "dependencies": {
     "alchemy-sdk": "^3.1.0",
