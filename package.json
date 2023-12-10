@@ -14,10 +14,12 @@
     "formatUniVe": "node ./src/formatData/formatUniVe.js",
     "cleanData": "node ./src/formatData/cleanData.js",
     "getTx": "node ./src/formatData/getTx.js",
-    "getTxLogs": "node ./src/formatData/getTxLogs.js"
+    "getTxLogs": "node ./src/formatData/getTxLogs.js",
+    "simulationSendTransfer": "node ./src/simulation/sendTransfer.js"
   },
   "dependencies": {
     "alchemy-sdk": "^3.1.0",
+    "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "ethereum-input-data-decoder": "^0.4.2",
     "ethers": "5",
