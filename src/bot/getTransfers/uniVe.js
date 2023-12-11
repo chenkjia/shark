@@ -81,7 +81,7 @@ const dataFormatter = {
 }
 
 export default (tx) => {
-  const parsedData = INTERFACE.INTERFACE_UNIVE.parseTransaction({ data: tx.data });
+  const parsedData = INTERFACE.INTERFACE_ROUTER_UNIVE.parseTransaction({ data: tx.data });
   return dataFormatter[parsedData.name](parsedData.args, tx.hash)
   // return {
   //   ...tx,

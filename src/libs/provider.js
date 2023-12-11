@@ -8,3 +8,7 @@ export const alchemy = new Alchemy({ apiKey: ENV.ALCHEMY_KEY, network: Network.E
 export const wssProvider = new ethers.providers.WebSocketProvider(ENV.RPC_URL_WSS);
 export const watcherWallet = new ethers.Wallet(ENV.WATCHER_KEY,wssProvider);
 export const searcherWallet = new ethers.Wallet(ENV.PRIVATE_KEY,wssProvider);
+
+export const tenderlyProvider = new ethers.providers.JsonRpcProvider(
+  `https://mainnet.gateway.tenderly.co/${ENV.TENDERLY_WEB3_GATEWAY_KEY}`
+);

@@ -33,7 +33,7 @@ const dataFormat = (txData) => {
 export default (tx) => {
   console.log('unive')
   const parsedData = decoder.decodeData(tx.data)
-  // const parsedData = INTERFACE.INTERFACE_UNIVE.parseTransaction({ data: tx.data });
+  // const parsedData = INTERFACE.INTERFACE_ROUTER_UNIVE.parseTransaction({ data: tx.data });
   console.log(parsedData)
   return 'aaa'
 }

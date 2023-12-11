@@ -15,7 +15,8 @@
     "cleanData": "node ./src/formatData/cleanData.js",
     "getTx": "node ./src/formatData/getTx.js",
     "getTxLogs": "node ./src/formatData/getTxLogs.js",
-    "simulationSendTransfer": "node ./src/simulation/sendTransfer.js"
+    "simulationSendTransfer": "node ./src/simulation/sendTransfer.js",
+    "simulationGetTransfer": "node ./src/simulation/getTransfer.js"
   },
   "dependencies": {
     "alchemy-sdk": "^3.1.0",
