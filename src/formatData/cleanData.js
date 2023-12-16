@@ -1,8 +1,6 @@
 import {alchemy} from '../libs/provider.js'
 import _ from 'lodash'
-import { ethers } from 'ethers';
 import mongodbClient from '../libs/mongodbClient.js'
-import { ABI_DEFINITION, commandS } from '../bot/getTransfers/uniVe.js'
 const dbName = 'c';
 
 let tmpWaitData = []

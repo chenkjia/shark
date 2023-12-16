@@ -11,12 +11,14 @@
     "stop": "pm2 stop ./src/main.js",
     "dev": "node ./src/main.js",
     "test": "node ./src/test.js",
+    "complete": "node ./src/complete/index.js",
     "formatUniVe": "node ./src/formatData/formatUniVe.js",
     "cleanData": "node ./src/formatData/cleanData.js",
     "getTx": "node ./src/formatData/getTx.js",
     "getTxLogs": "node ./src/formatData/getTxLogs.js",
     "simulationSendTransfer": "node ./src/simulation/sendTransfer.js",
-    "simulationGetTransfer": "node ./src/simulation/getTransfer.js"
+    "simulationGetTransfer": "node ./src/simulation/getTransfer.js",
+    "simulationGetEigenphi": "node ./src/simulation/getEigenphi.js"
   },
   "dependencies": {
     "alchemy-sdk": "^3.1.0",
