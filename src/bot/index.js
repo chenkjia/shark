@@ -9,11 +9,11 @@ const insertTransfers = async () => {
   // 插入tx数据
   const cloneTransfers = _.cloneDeep(tmpTransfers)
   tmpTransfers = []
-  await insert('c', 'transfers', cloneTransfers)
+  await insert('eagle', 'transfers', cloneTransfers)
   // 插入Transfers数据
   const cloneCommands = _.cloneDeep(tmpCommands)
   tmpCommands = []
-  await insert('c', 'commands', cloneCommands)
+  await insert('eagle', 'commands', cloneCommands)
 }
 
 setInterval(insertTransfers, 10000);
