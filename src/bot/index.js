@@ -10,13 +10,13 @@ const insertTransfers = async () => {
   if (tmpTransfers.length) {
     const cloneTransfers = _.cloneDeep(tmpTransfers)
     tmpTransfers = []
-    await insert('c', 'transfers', cloneTransfers)
+    await insert('eagle', 'transfers', cloneTransfers)
   }
   // 插入Transfers数据
   if (tmpCommands.length) {
     const cloneCommands = _.cloneDeep(tmpCommands)
     tmpCommands = []
-    await insert('c', 'commands', cloneCommands)
+    await insert('eagle', 'commands', cloneCommands)
   }
 }
 

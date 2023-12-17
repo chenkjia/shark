@@ -1,7 +1,31 @@
 // 源token
 const orginToken = [{
-  name: 'WETH',
-  address: 'C02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
+//   name: 'WETH',
+//   address: 'C02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+// }, {
+  name: 'X2Y2',
+  address: '1E4EDE388cbc9F4b5c79681B7f94d36a11ABEBC9'
+}, {
+  name: 'BLUR',
+  address: '5283D291DBCF85356A21bA090E6db59121208b44'
+}, {
+  name: 'PUSH',
+  address: 'f418588522d5dd018b425E472991E52EBBeEEEEE'
+}, {
+  name: 'MUTE',
+  address: 'A49d7499271aE71cd8aB9Ac515e6694C755d400c'
+}, {
+  name: 'HIGH',
+  address: '71Ab77b7dbB4fa7e017BC15090b2163221420282'
+}, {
+  name: 'SUSHI',
+  address: '6B3595068778DD592e39A122f4f5a5cF09C90fE2'
+}, {
+  name: 'COW',
+  address: 'DEf1CA1fb7FBcDC777520aa7f396b4E015F497aB'
+}, {
+  name: 'DYDX',
+  address: '92D6C1e31e14520e676a687F0a93788B716BEff5'
 }]
 const TOKEN = orginToken.map(token => {
   return {
