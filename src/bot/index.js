@@ -7,13 +7,17 @@ let tmpCommands = []
 
 const insertTransfers = async () => {
   // 插入tx数据
-  const cloneTransfers = _.cloneDeep(tmpTransfers)
-  tmpTransfers = []
-  await insert('c', 'transfers', cloneTransfers)
+  if (tmpTransfers.length) {
+    const cloneTransfers = _.cloneDeep(tmpTransfers)
+    tmpTransfers = []
+    await insert('c', 'transfers', cloneTransfers)
+  }
   // 插入Transfers数据
-  const cloneCommands = _.cloneDeep(tmpCommands)
-  tmpCommands = []
-  await insert('c', 'commands', cloneCommands)
+  if (tmpCommands.length) {
+    const cloneCommands = _.cloneDeep(tmpCommands)
+    tmpCommands = []
+    await insert('c', 'commands', cloneCommands)
+  }
 }
 
 setInterval(insertTransfers, 10000);
