@@ -12,11 +12,23 @@ export const insert = async (dbName, collectionName, data) => {
   mongodbClient.close()
   return result
 }
+
 export const read = async (dbName, collectionName, data = {}, params = {}) => {
   await mongodbClient.connect();
   const db = mongodbClient.db(dbName);
   const collection = db.collection(collectionName);
   const result = await collection.find(data, params).toArray();
+  mongodbClient.close()
+  return result
+}
+
+export const update = async (dbName, collectionName, data = {}, params = {}) => {
+  await mongodbClient.connect();
+  const db = mongodbClient.db(dbName);
+  const collection = db.collection(collectionName);
+  const result = await collection.updateOne(data, {
+    $set: params
+  });
   mongodbClient.close()
   return result
 }
