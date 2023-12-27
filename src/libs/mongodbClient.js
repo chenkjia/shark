@@ -21,6 +21,14 @@ export const read = async (dbName, collectionName, data = {}, params = {}) => {
   mongodbClient.close()
   return result
 }
+export const aggregate = async (dbName, collectionName, params = []) => {
+  await mongodbClient.connect();
+  const db = mongodbClient.db(dbName);
+  const collection = db.collection(collectionName);
+  const result = await collection.aggregate(params).toArray();
+  mongodbClient.close()
+  return result
+}
 
 export const update = async (dbName, collectionName, data = {}, params = {}) => {
   await mongodbClient.connect();

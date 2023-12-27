@@ -14,6 +14,7 @@
     "test:cleanUp": "node ./test/cleanUp/index.js",
     "test:getEigenphi": "node ./test/cleanUp/getEigenphi.js",
     "test:deconstruct": "node ./test/deconstruct/index.js",
+    "test:analysis": "node ./test/analysis/index.js",
     "complete": "node ./src/complete/index.js",
     "formatUniVe": "node ./src/formatData/formatUniVe.js",
     "cleanData": "node ./src/formatData/cleanData.js",
