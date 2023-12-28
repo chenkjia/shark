@@ -43,3 +43,5 @@ export const txFormat = (data) => {
     chainId
   }
 };
+
+export const isInverted = (tokenA, tokenB) => ethers.BigNumber.from(tokenA).gt(tokenB);

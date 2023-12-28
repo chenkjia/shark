@@ -11,8 +11,12 @@ export const deconstructBatch = async () => {
   const collectionName = 'transfers'
   // 定时读取mongodb的transfer数据,需要过滤isDeconstruct的数据
   const waitForDeconstruct = await read(dbName, collectionName, {
-    isSandWich:false,
+    isSandWich: false,
+    isAbandon: false,
     isDeconstruct: { $ne: true }
+  // }, {
+  //   limit: 1,
+  //   skip: 1
   })
   // 如果有数据未deconstruct,则对该数据执行deconstruct方法
   for (const item of waitForDeconstruct) {
