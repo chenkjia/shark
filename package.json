@@ -16,6 +16,7 @@
     "test:deconstruct": "node ./test/deconstruct/index.js",
     "test:analysis": "node ./test/analysis/index.js",
     "test:complete": "node ./test/complete/index.js",
+    "test:calculate": "node ./test/calculate/index.js",
     "complete": "node ./src/complete/index.js",
     "formatUniVe": "node ./src/formatData/formatUniVe.js",
     "cleanData": "node ./src/formatData/cleanData.js",
@@ -26,6 +27,7 @@
     "simulationGetEigenphi": "node ./src/simulation/getEigenphi.js"
   },
   "dependencies": {
+    "@ethersproject/units": "^5.7.0",
     "alchemy-sdk": "^3.1.0",
     "axios": "^1.6.2",
     "crypto": "^1.0.1",
