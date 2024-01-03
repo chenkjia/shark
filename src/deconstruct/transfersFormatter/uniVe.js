@@ -38,10 +38,11 @@ export const COMMONDS = {
     })
   },
   [CommandType.V2_SWAP_EXACT_IN]: (params) => {
+    console.log(params)
     return swapTokensForTokens({
       amountIn: params[1], 
       amountOut: params[2], 
-      path: [params[3][0].slice(2), params[3][1].slice(2)], 
+      path: params[3].map(i => i.slice(2)),
       to: params[0].slice(2)
     })
   },
@@ -49,7 +50,7 @@ export const COMMONDS = {
     return swapTokensForTokens({
       amountIn: params[2], 
       amountOut: params[1], 
-      path: [params[3][0].slice(2), params[3][1].slice(2)], 
+      path: params[3].map(i => i.slice(2)),
       to: params[0].slice(2)
     })
   },
@@ -58,6 +59,7 @@ const dataFormatter = {
   execute: (params) => {
     const tmp = params[1].map((p,index) => {
       const command = "0x" + params[0][index * 2 + 2] + params[0][index * 2 + 3]
+      console.log(command)
       if(!ABI_DEFINITION[command]) return null
       const info = ethers.utils.defaultAbiCoder.decode(ABI_DEFINITION[command], p)
       const result = COMMONDS[command] && COMMONDS[command](info)
@@ -68,5 +70,6 @@ const dataFormatter = {
 }
 
 export default (parsedData) => {
+  console.log(parsedData)
   return dataFormatter[parsedData.name](parsedData.args)
 }

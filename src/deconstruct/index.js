@@ -13,7 +13,8 @@ export const deconstructBatch = async () => {
   const waitForDeconstruct = await read(dbName, collectionName, {
     isSandWich: false,
     isAbandon: false,
-    isDeconstruct: { $ne: true }
+    // isDeconstruct: { $ne: true },
+    hash: '0x7932a1d8d52be676950e01af3a2fae37f530c0c112de9b41c101bb82d6533417'
   // }, {
   //   limit: 1,
   //   skip: 1
@@ -29,14 +30,15 @@ const deconstruct = async (dbName, collectionName, tx) => {
   console.log(tx)
   const decodeData = decode(routerName, tx)
   const transfers = transfersFormatter(routerName, decodeData)
-  let set = {}
-  if (transfers.length) {
-    set = {
-      isDeconstruct: true,
-      transfers
-    }
-    const result = await update(dbName, collectionName, tx, set)
-  }
+  console.log(transfers)
+  // let set = {}
+  // if (transfers.length) {
+  //   set = {
+  //     isDeconstruct: true,
+  //     transfers
+  //   }
+  //   const result = await update(dbName, collectionName, tx, set)
+  // }
   // 保存进mongodb
   // 识别整个交易链路
   // 单个交易的情况
