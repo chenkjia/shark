@@ -92,6 +92,5 @@ const dataFormatter = {
 }
 
 export default (parsedData) => {
-  console.log(parsedData)
   return dataFormatter[parsedData.name](parsedData.args)
 }
