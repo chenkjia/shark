@@ -93,6 +93,9 @@ export const calcSandwichOptimalIn = (
   // const upperBound = targetAmount.mul(2);
   // console.log(targetToken)
   const upperBound = parseUnits(TOKEN.LOW_TOKEN_OBJECT[targetToken].amount);
+  console.log('upperBound')
+  console.log(TOKEN.LOW_TOKEN_OBJECT[targetToken].amount)
+  console.log(upperBound)
   const lowerBound = parseUnits("0");
   // Optimal WETH in to push reserve to the point where the user
   // _JUST_ receives their min recv
@@ -133,7 +136,9 @@ export const calcSandwichState = (
     victimState.newReserveA
   )
   if (victimState.amountOut.lt(userMinRecv)) {
-    return {};
+    return {
+      // 如何定义计算交易量太少无法攻击
+    };
   }
 
   return {

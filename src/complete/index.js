@@ -31,8 +31,7 @@ export const complete = async (dbName, collectionName, transfer) => {
   for (let index = 0; index < transfer.transfers.length; index++) {
     const item = transfer.transfers[index];
     const pairAddress = await calculatePoolAddress(item)
-    // const resverse = await getReserves(item, pairAddress, 18880839)
-    const resverse = await getReserves(item, pairAddress, transfer.blockNumber)
+    const resverse = await getReserves(item, pairAddress, transfer.blockNumber - 1)
     console.log(resverse)
     console.log(index)
     await update(dbName, collectionName, transfer, {

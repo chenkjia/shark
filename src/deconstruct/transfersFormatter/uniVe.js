@@ -37,6 +37,28 @@ export const COMMONDS = {
       }
     })
   },
+  [CommandType.V3_SWAP_EXACT_OUT]: (params) => {
+    const tmp = formatExactInput(params[3].slice(2))
+    return tmp.map(({
+      tokenA,
+      tokenB,
+      fee,
+      poolPath,
+      invertedPoolPath,
+    }, i )=>{
+      return {
+        poolPath,
+        invertedPoolPath,
+        poolType: 'uniV3',
+        tokenA: tokenB,
+        tokenB: tokenA,
+        fee,
+        amountIn: i===tmp.length-1 ?ethers.BigNumber.from(params[2]) : ethers.BigNumber.from('0'),
+        amountOut: i===0 ?ethers.BigNumber.from(params[1]) : ethers.BigNumber.from('0'),
+        to: i === tmp.length - 1 ? params[0] : '0x0000000000000000000000000000000000000002',
+      }
+    })
+  },
   [CommandType.V2_SWAP_EXACT_IN]: (params) => {
     console.log(params)
     return swapTokensForTokens({
