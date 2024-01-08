@@ -12,5 +12,11 @@ const main = () => {
       toAddress: ROUTER.ROUTER_UNIVE,
     }, alchemyBot
   );
+  alchemy.ws.on(
+    {
+      method: 'alchemy_pendingTransactions',
+      toAddress: ROUTER.ROUTER_UNIV2,
+    }, alchemyBot
+  );
 }
 main();
