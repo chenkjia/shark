@@ -34,6 +34,13 @@ export const binarySearch = (
     return binarySearch(left, mid, calculateF, passConditionF, tolerance, [...result, mid]);
   }
 
+  // No negatives
+  // const ret = right.add(left).div(2);
+  // if (ret.lt(0)) {
+  //   return ethers.constants.Zero;
+  // }
+
+  // return ret;
   const ret = right.add(left).div(2);
   const list = [...result, ret].filter(item => {
     return passConditionF(calculateF(item))
@@ -79,23 +86,7 @@ export const calcSandwichOptimalIn = (
   // Our binary search must pass this function
   // i.e. User must receive at least min this
   const passF = (amountOut) => amountOut.gte(userMinRecvToken);
-
-  // Lower bound will be 0
-  // Upper bound will be 100 ETH (hardcoded, or however much ETH you have on hand)
-  // Feel free to optimize and change it
-  // It shouldn't be hardcoded hehe....
-  // const uniswapV2Pair = new ethers.Contract(
-  //   targetToken,
-  //   UniV2PairABI,
-  //   searcherWallet
-  // );
-  // const targetAmount = await uniswapV2Pair.balanceOf(searcherWallet.address);
-  // const upperBound = targetAmount.mul(2);
-  // console.log(targetToken)
   const upperBound = parseUnits(TOKEN.LOW_TOKEN_OBJECT[targetToken].amount);
-  console.log('upperBound')
-  console.log(TOKEN.LOW_TOKEN_OBJECT[targetToken].amount)
-  console.log(upperBound)
   const lowerBound = parseUnits("0");
   // Optimal WETH in to push reserve to the point where the user
   // _JUST_ receives their min recv

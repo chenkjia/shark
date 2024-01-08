@@ -4,6 +4,11 @@ const orginToken = [{
 //   name: 'WETH',
 //   address: 'C02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
 // }, {
+  
+  name: 'MICKEY',
+  address: '9609b540e5dedddb147abbf9812ade06b1e61b2c',
+  amount: '1000000'
+}, {
   name: 'BEND',
   address: '0d02755a5700414B26FF040e1dE35D337DF56218',
   amount: '1000000'
@@ -16,9 +21,9 @@ const orginToken = [{
   address: '1E4EDE388cbc9F4b5c79681B7f94d36a11ABEBC9',
   amount: '1000000'
 }, {
-  name: 'PUSH',
-  address: 'f418588522d5dd018b425E472991E52EBBeEEEEE',
-  amount: '1000000'
+  name: 'CRE',
+  address: '41EA5d41EEACc2D5c4072260945118a13bb7EbCE',
+  amount: '100000000'
 }, {
   name: 'MUTE',
   address: 'A49d7499271aE71cd8aB9Ac515e6694C755d400c',

@@ -1,28 +1,10 @@
-import keccak256 from 'keccak256'
 import { ethers } from 'ethers';
 import { searcherWallet } from './provider.js'
-// export const calculatePoolAddressV2 = (token0Address, token1Address) => {
-//   const sortedTokens = [token0Address, token1Address].sort();
-
-//   const poolAddress = crypto
-//     .createHash('sha3-256')
-//     .update(
-//       Buffer.from(
-//         'ff' +
-//           sortedTokens[0].slice(2) +
-//           sortedTokens[1].slice(2),
-//         'hex'
-//       )
-//     )
-//     .digest('hex')
-//     .slice(0, 42);
-
-//   return poolAddress;
-// }
 export const calculatePoolAddressV2 = (tokenA, tokenB) => {
   const sortedTokens = [tokenA, tokenB].sort()
   const [token0, token1] = sortedTokens
-
+  console.log('[token0, token1]')
+  console.log([token0, token1])
   const salt = ethers.utils.keccak256(token0 + token1.replace("0x", ""));
   const address = ethers.utils.getCreate2Address( 
     "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", // Factory address (contract creator)

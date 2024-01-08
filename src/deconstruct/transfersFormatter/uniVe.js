@@ -64,7 +64,7 @@ export const COMMONDS = {
     return swapTokensForTokens({
       amountIn: params[1], 
       amountOut: params[2], 
-      path: params[3].map(i => i.slice(2)),
+      path: params[3].map(i => `0x${i.slice(2)}`),
       to: params[0].slice(2)
     })
   },
@@ -72,7 +72,7 @@ export const COMMONDS = {
     return swapTokensForTokens({
       amountIn: params[2], 
       amountOut: params[1], 
-      path: params[3].map(i => i.slice(2)),
+      path: params[3].map(i => `0x${i.slice(2)}`),
       to: params[0].slice(2)
     })
   },
